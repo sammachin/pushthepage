@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta name = "viewport" content = "initial-scale = 0.45, user-scalable = yes">
+  	<link rel="stylesheet" href="style.css" type="text/css"/>
+  </head>
+   <body>
+  	<div id="header">
+  		<a href="/">Push The Page</a>
+  	</div>
+   <div id="wrap">
+   		<h1>Welcome</h1>
+	  <p>You are logged in as {{ user }}</p>  
+	  <p>If this is the first time you've logged in you'll need to pair your phone with the site, click on the "Add New Device" button below then enter that code into the app on your phone.</p>
+	  <p>If you haven't already then now would be a good time to install the App on your phone, you can get it from the App Store by searching "Push The Page"</p>
+	  <p>If you want to remove any of your phones from the service or the get the bookmarklet link then click List Devices</p>
+	  <p>We recommend you stay logged in to Push The Page otherwise we'll need to ask you for your password whenever you push a page</P> 
+	
+	<ul id="menu">
+		<li class="add">
+			<a href="/add">Add new device</a>
+		</li>
+		<li class="list">
+			<a href="/devices">List devices</a>
+		</li>
+		<li class="info">
+			<a href="/faqs">About</a>
+		</li>
+		<li class="logout">
+			<a href="/logout">Logout</a>
+		</li>
+	</ul>
+	</div>
+	 <p id="footer">From the genius of <a href="http://mogotion.com">Sam</a> and <a href="http://simonmaddox.com">Simon</a> and a little bit of <a href="http://laurakalbag.com">Laura</a>.</p>
+  </body>
+</html>

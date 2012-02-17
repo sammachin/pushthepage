@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name = "viewport" content = "initial-scale = 0.45, user-scalable = yes">
+		<link rel="stylesheet" href="style.css" type="text/css"/>
+	</head>
+	<body>
+		<div id="header">
+			<a href="/">Push The Page</a>
+		</div>
+		<div id="wrap">
+			<h1>List Devices</h1>
+			<table id="list-devices">
+				<tr>
+					<th>Device Name</th>
+					<th>Device Key</th>
+				<th>Bookmarklet</th>
+				</tr>
+				{% for device in devices %}
+				<tr>
+					<td>{{ device.devicename|escape }}</td>
+					<td class="devicekey">{{ device.devicekey }}</td>
+					<td>
+						<a class="bookmarklet"
+							href="javascript:if(document.location.href.indexOf('google')&&document.getElementById('link')){var newURI='http://www.pushthepage.com/send?device={{ device.devicekey }}&url='+encodeURIComponent(document.getElementById('link'));}else{var newURI='http://www.pushthepage.com/send?device={{ device.devicekey }}&url='+encodeURIComponent(window.location.href);}window.location=newURI;
+">
+							{{ device.devicename }}
+						</a>
+					</td>
+					<td><a href="/deletedevice?devicekey={{ device.devicekey }}" class="delete">Delete</a></td>
+				</tr>	
+				{% endfor %}
+			</table>
+			<ul id="menu">
+				<li class="add">
+					<a href="/add">Add new device</a>
+				</li>
+				<li class="list">
+					<a href="/devices">List devices</a>
+				</li>
+				<li class="info">
+					<a href="/faqs">About</a>
+				</li>
+				<li class="logout">
+					<a href="/logout">Logout</a>
+				</li>
+			</ul>
+		</div>
+		 <p id="footer">From the genius of <a href="http://mogotion.com">Sam</a> and <a href="http://simonmaddox.com">Simon</a> and a little bit of <a href="http://laurakalbag.com">Laura</a>.</p>
+	</body>
+</html>

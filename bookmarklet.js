@@ -1,0 +1,1 @@
+ javascript:var newURI="http://localhost:8080?mode=qrcode&url="+encodeURIComponent(window.location.href);window.location=newURI;

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name = "viewport" content = "initial-scale = 0.45, user-scalable = yes">
+		<link rel="stylesheet" href="style.css" type="text/css"/>
+	</head>
+	<body>
+		<div id="header">
+			<a href="/">Push The Page</a>
+		</div>
+		<div id="wrap">
+			<h1>FAQs</h1>
+			<ol id="faq">
+				{% for q in faqs %}
+				<li>
+					<dl>
+						<dt>{{ q.question }}</dt>
+						<dd>{{ q.answer }}</dd>
+					</dl>	
+				</li>
+				{% endfor %}
+			</ol>   				
+			<ul id="menu">
+				<li class="add">
+					<a href="/add">Add new device</a>
+				</li>
+				<li class="list">
+					<a href="/devices">List devices</a>
+				</li>
+				<li class="info">
+					<a href="/faqs">About</a>
+				</li>
+				<li class="logout">
+					<a href="/logout">Logout</a>
+				</li>
+			</ul>
+		</div>
+		 <p id="footer">From the genius of <a href="http://mogotion.com">Sam</a> and <a href="http://simonmaddox.com">Simon</a> and a little bit of <a href="http://laurakalbag.com">Laura</a>.</p>
+	</body>
+</html>

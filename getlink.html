@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta name = "viewport" content = "initial-scale = 0.45, user-scalable = yes">
+  	<link rel="stylesheet" href="style.css" type="text/css"/>
+  </head>
+   <body>
+  	<div id="header">
+  		<a href="/">Push The Page</a>
+  	</div>
+   <div id="wrap">
+   		<h1>Get Link</h1>
+		<p> Drag the link below to your bookmarks bar </p>
+
+		<div id="bookmarklet">
+			<a href="javascript:if(document.location.href.indexOf('google')&&document.getElementById('link')){var newURI='http://www.pushthepage.com/send?device={{ devicekey }}&url='+encodeURIComponent(document.getElementById('link'));}else{var newURI='http://www.pushthepage.com/send?device={{ devicekey }}&url='+encodeURIComponent(window.location.href);}window.location=newURI;
+">
+				{{ devicename }}
+			</a>
+		</div>
+		<p>Once you've done that exit the app on your phone by hitting the home key then click the big green button below</p>
+		<p>
+			<a href="/done?device={{ devicekey }}" id="success">Continue</a>
+		</p>
+
+		<ul id="menu">
+			<li class="add">
+				<a href="/add">Add new device</a>
+			</li>
+			<li class="list">
+				<a href="/devices">List devices</a>
+			</li>
+			<li class="info">
+				<a href="/faqs">About</a>
+			</li>
+			<li class="logout">
+				<a href="/logout">Logout</a>
+			</li>
+		</ul>
+	</div>
+	 <p id="footer">From the genius of <a href="http://mogotion.com">Sam</a> and <a href="http://simonmaddox.com">Simon</a> and a little bit of <a href="http://laurakalbag.com">Laura</a>.</p>
+</body>
+</html>

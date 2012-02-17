@@ -1,0 +1,291 @@
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, font, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td {margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%; vertical-align: baseline;background: transparent;font-weight: normal;}body {line-height: 1;}blockquote, q {quotes: none;}/* remember to highlight inserts somehow! */ins {text-decoration: none;}del {text-decoration: line-through;} em {font-style:italic;} strong {font-weight:bold;} abr {border-bottom:1px dotted;}/* tables still need 'cellspacing="0"' in the markup */table {border-collapse: collapse;border-spacing: 0;}
+
+body {
+	background: #a3dffb;
+	background: -webkit-gradient(linear, left top, left bottom, from(#70A9CA), to(#94D7FC));
+	background: -moz-linear-gradient(top,  #70A9CA,  #94D7FC);
+	color: #2D333A;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+a {
+	color: #16548A;
+	transition: all .1s linear;
+   -o-transition: all .1s linear;
+   -moz-transition: all .1s linear;
+   -webkit-transition: all .1s linear;
+}
+
+a:hover {
+	color: #11416C; 
+}
+
+h1, h2,
+div#header a {
+	color: #005F87;
+	font-size: 21px;
+	line-height: 30px;
+	font-weight: bold;
+	text-shadow: 1px 1px 2px rgba(44, 51, 58, 0.1);
+}
+
+h1 {
+	margin-bottom: 20px;
+}
+
+h2,
+div#header a {
+	font-size: 18px;
+	text-decoration: none;
+}
+
+h2#code {
+	color: #000;
+	font-size: 30px;
+	margin: 0 0 30px 0;
+	text-align: center;
+}
+
+p {
+	padding-bottom: 20px;
+}
+
+.deleted, .delete {
+	color: #AE1A00;
+}
+
+.deleted:hover, .delete:hover {
+	color: #8A1500;
+}
+
+div#header {
+	background: #2A4F64;
+	-webkit-box-shadow: 0 0 10px rgba(44, 51, 58, 0.3);
+	-moz-box-shadow: 0 0 10px rgba(44, 51, 58, 0.3);
+	box-shadow: 0 0 10px rgba(44, 51, 58, 0.3);
+	color: #fff;
+	height: 40px;
+	margin-bottom: 40px;
+	text-align: center;
+	width: 100%;
+}
+
+div#header a {
+	background: url(images/push-the-page.png) top center no-repeat;
+	color: #B8E2FF;
+	display: block;
+	height: 160px;
+	margin: 0 auto;
+	margin-bottom: -120px;
+	line-height: 20px;
+	position: relative;
+	text-indent: -99999px;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+	width: 615px;
+	z-index: 100;
+}
+
+div#wrap {
+	background: #fff;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-o-border-radius: 20px;
+	border-radius: 20px;
+	-webkit-box-shadow: 0 0 30px rgba(44, 51, 58, 0.2);
+	-moz-box-shadow: 0 0 30px rgba(44, 51, 58, 0.2);
+	box-shadow: 0 0 30px rgba(44, 51, 58, 0.2);
+	margin: 20px auto;
+	padding: 40px 40px 80px 40px;
+	position: relative;
+	width: 620px;
+	z-index: 99;
+}
+
+img#iphone {
+	float: right;
+	margin: -140px -20px 20px 20px;
+	margin-right: -20px;
+}
+
+a#app-store-badge {
+	display: block;
+	margin-top: 20px;
+	margin-bottom: -20px;
+	transition: all .3s linear;
+   -o-transition: all .3s linear;
+   -moz-transition: all .3s linear;
+   -webkit-transition: all .3s linear;
+}
+
+a#app-store-badge:hover {
+	opacity: 0.8;
+}
+
+div#qrcode {
+	height: 350px;
+	margin: -40px auto 0 auto;
+	width: 350px;
+}
+
+a#success {
+	background: #085F00;
+	background: -webkit-gradient(linear, left top, left bottom, from(#146500), to(#0D4400));
+	background: -moz-linear-gradient(top,  #146500,  #0D4400);
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-o-border-radius: 20px;
+	border-radius: 20px;
+	-webkit-box-shadow: 0 0 30px rgba(171, 219, 21, 0.5);
+	-moz-box-shadow: 0 0 30px rgba(171, 219, 21, 0.5);
+	box-shadow: 0 0 30px rgba(171, 219, 21, 0.5);
+	color: #E8FFC7;
+	display: block;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 30px;
+	margin: 20px 40px 40px 40px;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	transition: all .3s linear;
+   -o-transition: all .3s linear;
+   -moz-transition: all .3s linear;
+   -webkit-transition: all .3s linear;
+}
+
+a#success:hover {
+	background: #0D4200;
+	background: -webkit-gradient(linear, left top, left bottom, from(#0D4400), to(#146500));
+	background: -moz-linear-gradient(top,  #0D4400,  #146500);
+	text-shadow: 1px 1px 2px rgba(30, 118, 1, 0.8);
+}
+
+div#bookmarklet {
+	margin-bottom: 40px;
+}
+
+div#bookmarklet a {
+	border: 2px dashed #aaa;
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	color: #525252;
+	display: block;
+	margin: 0 80px;
+	padding: 10px;
+	text-align: center;
+}
+
+table {
+	margin: 40px 0;
+}
+
+table td,
+table th {
+	background: #E2F7FF;
+	border: 2px solid #fff;
+	padding: 10px;
+	text-align: left;
+}
+
+table th {
+	background: #D5E9F0;
+}  
+
+table td.devicekey{
+	font-size: 9px;
+}
+
+table a.bookmarklet {
+	color: #4F4F4F;
+}
+
+table a.bookmarklet:hover {
+	color: #404040;
+}
+
+ol#faq {
+	margin-bottom: 40px;
+	margin-left: 40px;
+}
+
+ol#faq li {
+	padding-bottom: 20px;
+}
+
+ol#faq li dl dt {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+ul#menu {
+	border-top: 1px dotted #ccc;
+	float: left;
+	padding-top: 20px;
+	width: 100%;
+}
+
+ul#menu li {
+	float: left;
+	list-style-type: none;
+}
+
+ul#menu li a {
+	display: block;
+	float: left;
+	padding: 10px 10px 10px 40px;
+	text-align: left;
+}
+
+ul#menu li.add {
+	width: 30%;
+}
+
+ul#menu li.add a {
+	background: url(images/add.gif) center left no-repeat;
+}
+
+ul#menu li.list {
+	width: 25%;
+}
+
+ul#menu li.list a {
+	background: url(images/table.gif) center left no-repeat;
+}
+
+ul#menu li.info {
+	width: 20%;
+}
+
+ul#menu li.info a {
+	background: url(images/information.gif) center left no-repeat;
+}
+
+ul#menu li.logout {
+	float: right;
+	width: 20%;
+}
+
+ul#menu li.logout a {
+	background: url(images/cancel.gif) center left no-repeat;
+}
+
+p#footer {
+	background: #2A4F64;
+	-webkit-box-shadow: 0 0 5px rgba(44, 51, 58, 0.3);
+	-moz-box-shadow: 0 0 5px rgba(44, 51, 58, 0.3);
+	box-shadow: 0 0 5px rgba(44, 51, 58, 0.3);
+	color: #fff;
+	margin-top: 40px;
+	padding: 10px 0;
+	text-align: center;
+	width: 100%;
+} 
+
+p#footer a,
+p#footer a:hover {
+	color: #fff;
+}

@@ -1,0 +1,4 @@
+cron:
+- description: Look for incomplete pairings
+  url: /admin/cleanupdevices
+  schedule: every 4 hours
