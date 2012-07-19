@@ -174,8 +174,8 @@ class PairDevice(webapp.RequestHandler):
             device.devicetype = devicetype
             device.put()
             if devicetype == "ios":
-                application_key = 'YcppDiQeRlKh_AChaEMmXQ'
-                master_secret = '2o3KTvHKTsKuMQRapMUnGg'
+                application_key = 'nu4wCH5nShasbtbXd9Ce3Q'
+				master_secret = 'p0l9viabQOa8BKAnTgOmyA'
                 alias = str(user.nickname()) + "_" + devicename
                 logging.debug(alias)
                 try:
@@ -237,8 +237,8 @@ class Send(webapp.RequestHandler):
             else:   
                 if r.devicetype == "ios":
                     logging.debug("Sending UA Push to: " + r.token)
-                    application_key = 'YcppDiQeRlKh_AChaEMmXQ'
-                    master_secret = '2o3KTvHKTsKuMQRapMUnGg'
+                    application_key = 'nu4wCH5nShasbtbXd9Ce3Q'
+					master_secret = 'p0l9viabQOa8BKAnTgOmyA'
                     try:
                         airship = urbanairship.Airship(application_key, master_secret)
                         airship.push({'aps': {'alert': link, 'sound': 'bing'}}, device_tokens=[r.token])
@@ -273,8 +273,8 @@ class Done(webapp.RequestHandler):
             else:   
                 if r.devicetype == "ios":
                     logging.debug("Sending UA Push to: " + r.token)
-                    application_key = 'YcppDiQeRlKh_AChaEMmXQ'
-                    master_secret = '2o3KTvHKTsKuMQRapMUnGg'
+                    application_key = 'nu4wCH5nShasbtbXd9Ce3Q'
+					master_secret = 'p0l9viabQOa8BKAnTgOmyA'
                     airship = urbanairship.Airship(application_key, master_secret)
                     airship.push({'aps': {'alert': link, 'sound': 'bing'}}, device_tokens=[r.token])
                 elif r.devicetype == "xmpp":
@@ -374,13 +374,13 @@ class XmppHandler(xmpp_handlers.CommandHandler):
 
             
 
-application = webapp.WSGIApplication([('/', MainPage),
+application = webapp.WSGIApplication([('/', ComingSoon),
                                       ('/_ah/xmpp/message/chat/', XmppHandler),
-				      ('/main', MainPage),
+				      				  ('/main', MainPage),
                                       ('/welcome', Welcome),
                                       ('/send', Send),
                                       ('/devices', ListDevices),
-				      ('/add', AddDevice),
+				      				  ('/add', AddDevice),
                                       ('/pair', PairDevice),
                                       ('/checkpairing', CheckPairing),
                                       ('/link', GetLink),
@@ -393,7 +393,7 @@ application = webapp.WSGIApplication([('/', MainPage),
                                       ('/Hello', Hello),
                                       ('/congratulations', Congrats),
                                       ('/logout', Logout)], 
-				      debug=True)
+				      				debug=True)
 
 
 
