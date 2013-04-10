@@ -19,10 +19,12 @@ import urllib
 from django.utils import simplejson
 from google.appengine.ext.webapp import xmpp_handlers
 from google.appengine.api import xmpp
+import creds
+
 
 
 def shorten(url):
-    request = "http://api.bit.ly/v3/shorten?domain=bit.ly&login=sammachin&apiKey=R_c485079e53141988170348650dac4f9b&format=txt&longUrl="
+    request = "http://api.bit.ly/v3/shorten?domain=bit.ly&login=sammachin&apiKey%s&format=txt&longUrl=" % cred.bitlykey
     request += urllib.quote(url)
     result = urlfetch.fetch(request)
     return result.content
@@ -174,8 +176,8 @@ class PairDevice(webapp.RequestHandler):
             device.devicetype = devicetype
             device.put()
             if devicetype == "ios":
-                application_key = 'nu4wCH5nShasbtbXd9Ce3Q'
-				master_secret = 'p0l9viabQOa8BKAnTgOmyA'
+                application_key = creds.ua_application_key
+				master_secret = creds.ua_master_secret
                 alias = str(user.nickname()) + "_" + devicename
                 logging.debug(alias)
                 try:
@@ -237,8 +239,8 @@ class Send(webapp.RequestHandler):
             else:   
                 if r.devicetype == "ios":
                     logging.debug("Sending UA Push to: " + r.token)
-                    application_key = 'nu4wCH5nShasbtbXd9Ce3Q'
-					master_secret = 'p0l9viabQOa8BKAnTgOmyA'
+                    application_key = creds.ua_application_key
+					master_secret = creds.ua_master_secret
                     try:
                         airship = urbanairship.Airship(application_key, master_secret)
                         airship.push({'aps': {'alert': link, 'sound': 'bing'}}, device_tokens=[r.token])
@@ -273,8 +275,8 @@ class Done(webapp.RequestHandler):
             else:   
                 if r.devicetype == "ios":
                     logging.debug("Sending UA Push to: " + r.token)
-                    application_key = 'nu4wCH5nShasbtbXd9Ce3Q'
-					master_secret = 'p0l9viabQOa8BKAnTgOmyA'
+                    application_key = creds.ua_application_key
+					master_secret = creds.ua_master_secret
                     airship = urbanairship.Airship(application_key, master_secret)
                     airship.push({'aps': {'alert': link, 'sound': 'bing'}}, device_tokens=[r.token])
                 elif r.devicetype == "xmpp":
